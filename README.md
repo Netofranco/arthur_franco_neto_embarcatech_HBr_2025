@@ -1,6 +1,6 @@
 # Projetos de Sistemas Embarcados - EmbarcaTech 2025
 
-Autor: **(insira seu nome)**
+Autor: Arthur Franco Neto
 
 Curso: Residência Tecnológica em Sistemas Embarcados
 
