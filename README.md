@@ -18,6 +18,12 @@ Cada projeto tem sua própria pasta, contendo o código-fonte, documentação e 
 
 ---
 
-## O que fazer com este arquivo
+## Projetos
 
-Ao fazer o *fork* do repositório, o aluno está livre para modificar este arquivo como quiser dentro do seu próprio *fork*.
+Projeto Final Fase 1 - Monitor RFID (.projetos/rfid_monitor)
+
+Unidade 1 - Contador decrescente (.projetos/interrupt_counter)
+
+Unidade 1 - ADC Joystick (.projetos/adc_joystick_xy)
+
+Unidade 1 - ADC Temperatura RP2040 (.projetos/adc_temperature)
