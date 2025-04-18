@@ -28,36 +28,36 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(interrupt_counter C CXX ASM)
+project(countdown_counter_interrupt C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(interrupt_counter interrupt_counter.c )
+add_executable(countdown_counter_interrupt countdown_counter_interrupt.c )
 
-pico_set_program_name(interrupt_counter "interrupt_counter")
-pico_set_program_version(interrupt_counter "0.1")
+pico_set_program_name(countdown_counter_interrupt "countdown_counter_interrupt")
+pico_set_program_version(countdown_counter_interrupt "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(interrupt_counter 0)
-pico_enable_stdio_usb(interrupt_counter 1)
+pico_enable_stdio_uart(countdown_counter_interrupt 0)
+pico_enable_stdio_usb(countdown_counter_interrupt 0)
 
 # Add the standard library to the build
-target_link_libraries(interrupt_counter
+target_link_libraries(countdown_counter_interrupt
         pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(interrupt_counter PRIVATE
+target_include_directories(countdown_counter_interrupt PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(interrupt_counter 
+target_link_libraries(countdown_counter_interrupt 
         hardware_i2c
-        hardware_timer
+        hardware_timer        
         )
 
-pico_add_extra_outputs(interrupt_counter)
+pico_add_extra_outputs(countdown_counter_interrupt)
 
