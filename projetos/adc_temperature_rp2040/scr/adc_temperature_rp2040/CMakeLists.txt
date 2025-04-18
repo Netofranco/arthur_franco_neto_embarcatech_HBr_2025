@@ -44,6 +44,7 @@ pico_set_program_version(adc_temperature_rp2040 "0.1")
 pico_enable_stdio_uart(adc_temperature_rp2040 0)
 pico_enable_stdio_usb(adc_temperature_rp2040 1)
 
+
 # Add the standard library to the build
 target_link_libraries(adc_temperature_rp2040
         pico_stdlib)

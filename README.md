@@ -22,8 +22,8 @@ Cada projeto tem sua própria pasta, contendo o código-fonte, documentação e 
 
 Projeto Final Fase 1 - Monitor RFID (.projetos/rfid_monitor)
 
-Unidade 1 - Contador decrescente (.projetos/interrupt_counter)
+Unidade 1 - Contador decrescente (.projetos/countdown_counter_interrupt)
 
-Unidade 1 - ADC Joystick (.projetos/adc_joystick_xy)
+Unidade 1 - ADC Joystick (.projetos/adc_joystick)
 
-Unidade 1 - ADC Temperatura RP2040 (.projetos/adc_temperature)
+Unidade 1 - ADC Temperatura RP2040 (.projetos/adc_temperature_rp2040)
