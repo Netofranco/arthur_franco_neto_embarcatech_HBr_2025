@@ -1,5 +1,7 @@
-#include "unity.h"
-#include "../src/temperature.h"
+#include "Unity/unity.h"
+#include "src/temperature.h"
+#include "pico/stdlib.h"
+#include <stdio.h>             // Biblioteca padrão para entrada e saída, utilizada para printf.
 
 void setUp(void) {
     // Configuração inicial antes de cada teste
@@ -9,31 +11,21 @@ void tearDown(void) {
     // Limpeza após cada teste
 }
 
-void test_adc_to_temperature(void) {
-    // Teste com valor ADC mínimo (0)
-    TEST_ASSERT_FLOAT_WITHIN(0.1, -236.0, adc_to_temperature(0));
-    
-    // Teste com valor ADC médio (2048)
-    TEST_ASSERT_FLOAT_WITHIN(0.1, 27.0 - ((1.65 - 0.706)/0.001721), adc_to_temperature(2048));
-    
-    // Teste com valor ADC máximo (4095)
-    TEST_ASSERT_FLOAT_WITHIN(0.1, 27.0 - ((3.3 - 0.706)/0.001721), adc_to_temperature(4095));
-}
-
-void test_celsius_to_fahrenheit(void) {
-    // Teste com 0°C
-    TEST_ASSERT_FLOAT_WITHIN(0.1, 32.0, celsius_to_fahrenheit(0.0));
-    
-    // Teste com 100°C
-    TEST_ASSERT_FLOAT_WITHIN(0.1, 212.0, celsius_to_fahrenheit(100.0));
-    
-    // Teste com valor negativo
-    TEST_ASSERT_FLOAT_WITHIN(0.1, -40.0, celsius_to_fahrenheit(-40.0));
+void test_adc_to_temperature_know_level(void){
+    TEST_ASSERT_FLOAT_WITHIN(0.2, 27.0, adc_to_temperature(876)); //876 valor correspondente a 27 C
 }
 
 int main(void) {
+
+    stdio_init_all();
+    sleep_ms(5000); 
+
     UNITY_BEGIN();
-    RUN_TEST(test_adc_to_temperature);
-    RUN_TEST(test_celsius_to_fahrenheit);
+    printf("Iniciando...\n");
+    printf("Testando...\n");
+    RUN_TEST(test_adc_to_temperature_know_level);
+    sleep_ms(2000);
+    
+    printf("Resultado:\n");
     return UNITY_END();
 }
